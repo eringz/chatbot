@@ -1,0 +1,97 @@
+*{
+    font-family: ColfaxAI, Helvetica, sans-serif;;
+}
+    body{
+        background-color: #18191A;
+        margin: 0;
+    }
+        nav{
+            background-color: #18191A;
+            border-bottom: 2px solid #393A3B;
+            display: inline-block;
+            width: 102em;
+            height: 60px;
+        }
+        div.container{
+            /* border: 1px solid #4BE7E3; */
+            border: 1px solid #393A3B;
+            background-color: #18191A;
+            display: inline-block;
+            width: 800px;
+            min-height: 700px;
+            margin: 20px 25em;
+        }
+            .chat-head{
+                background-color: #18191A;
+                border: 1px solid #212223;
+                padding: 10px;
+            }
+                .chat-head img{
+                    display: inline-block;
+                    width: 40px;
+                    border-radius: 100%;
+                    margin: 5px;
+                }
+                .indicator{
+                    background-color: green;
+                    border: 1px solid #212223;
+                    border-radius: 100%;
+                    position: absolute;
+                    top: 8.1em;
+                    left: 27.6em;
+                    width: 10px;
+                    height: 10px;
+                }
+                .user-status{
+                    display: inline-block;
+                    vertical-align: top;
+                    color: #E4E6EB;
+                }
+                    h1{
+                        font-size: 1.4rem;
+                        margin: 4px 0 0 0;
+                    }
+                    span{
+                        font-size: .8rem;
+                    }
+            .chat-body{
+                display: block;
+                overflow: auto;
+                height: 40em;
+            }
+                .user{
+                    margin-right: 20px;
+                    text-align: right;
+                }
+                    .user-span, .chatbot-span{
+                        background-color: rgb(4, 68, 68);
+                        border-radius: 5px;
+                        padding: 5px 20px;
+                        color: white;
+                        font-size: 1rem;
+                    }
+                .chatbot-img{
+                    display: inline-block;
+                    width: 35px;
+                    border-radius: 100%;
+                    margin: 5px 20px;
+                }
+                .chatbot-span{
+                    vertical-align: top;
+                    display: inline-block;
+                    margin-top: 10px;
+                }
+            .chat-footer{
+                display: block;
+            }
+                input{
+                    background-color: #3A3B3C;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 7px;
+                    margin: 20px 100px;
+                    width: 600px;
+                    height: 30px;
+                    color: white;
+                    font-size: 1rem;
+                }
