@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            alert('document is ready');
+            $('form').submit(function(){
+                
+
+                var input = $('user_input');
+                $.post($(this).attr('action'), $(this).serialize(), function(res){
+                    console.log($(this).attr('action'));
+                }, 'json');
+            });
+        });
+    </script>
 </head>
 <body>
     <nav></nav>
@@ -32,6 +46,15 @@
                 <input type="text" name="message" placeholder="Aa">
             </form>
         </div>
+        <?php
+// header("Content-type:application/pdf");
+
+// It will be called downloaded.pdf
+// header("Content-Disposition:attachment;filename='downloaded.pdf'");
+
+// The PDF source is in original.pdf
+// readfile("original.pdf");
+?>
     </div>
 </body>
 </html>

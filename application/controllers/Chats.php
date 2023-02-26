@@ -24,6 +24,35 @@ class Chats extends CI_Controller {
 	}
 
 	public function message(){
-		echo $this->input->post('message');
+		
+		$message = $this->input->post('message');
+		$url = "https://wsapi.simsimi.com/190410/talk";
+		$ch = curl_init();
+
+		$options = array(
+			CURLOPT_AUTOREFERER => 1,
+						CURLOPT_RETURNTRANSFER => 1,
+						CURLOPT_CONNECTTIMEOUT => 1,
+						CURLOPT_URL => $url,
+						CURLOPT_FOLLOWLOCATION => 1,
+						CURLOPT_SSL_VERIFYPEER => 0,
+						CURLOPT_HTTPHEADER => array(
+							'Content-Type: application/json',
+							"x-api-key: d9ZcWIDd4E8wun_6MKX6wy_KgH4QOWuno4Qz5l98",
+							'{
+								"utext":"hello",
+								"lang": "en",
+
+							}' 
+						)
+					);
+		curl_setopt_array($ch, $options);
+
+
+		$data = curl_exec($ch);
+		$info = curl_getinfo($ch);
+		curl_close($ch);
+		print_r($data . 'in response with '.$message);
+
 	}
 }
