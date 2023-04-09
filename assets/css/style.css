@@ -4,6 +4,7 @@
     body{
         background-color: #18191A;
         margin: 0;
+        
     }
         nav{
             background-color: #18191A;
@@ -18,8 +19,8 @@
             background-color: #18191A;
             display: inline-block;
             width: 800px;
-            min-height: 700px;
-            margin: 20px 25em;
+            height: 700px;
+            margin: 0 25em;
         }
             .chat-head{
                 background-color: #18191A;
@@ -54,43 +55,51 @@
                     span{
                         font-size: .8rem;
                     }
-            .chat-body{
-                display: block;
-                overflow: auto;
-                height: 40em;
+            #chats{
+                display: inline-block;
+                /* overflow: auto; */
+                height: 200px;
             }
-                .user{
-                    margin-right: 20px;
-                    text-align: right;
-                }
-                    .user-span, .chatbot-span{
-                        background-color: rgb(4, 68, 68);
-                        border-radius: 5px;
-                        padding: 5px 20px;
-                        color: white;
-                        font-size: 1rem;
+                /* .chat-body{
+                    display: block;
+                    overflow: auto;
+                    height: 40em;
+                } */
+                    .user{
+                        margin-left: 2000px;
+                        /* text-align: right; */
                     }
-                .chatbot-img{
-                    display: inline-block;
-                    width: 35px;
-                    border-radius: 100%;
-                    margin: 5px 20px;
-                }
-                .chatbot-span{
-                    vertical-align: top;
-                    display: inline-block;
-                    margin-top: 10px;
-                }
+                        .user-span, .chatbot-span{
+                            background-color: rgb(4, 68, 68);
+                            border-radius: 5px;
+                            padding: 5px 20px;
+                            color: white;
+                            font-size: 1rem;
+                        }
+                    .chatbot-img{
+                        display: inline-block;
+                        width: 35px;
+                        border-radius: 100%;
+                        margin: 5px 20px;
+                    }
+                    .chatbot-span{
+                        vertical-align: top;
+                        display: inline-block;
+                        margin-top: 10px;
+                    }
             .chat-footer{
-                display: block;
+                display: inline-block;  
             }
+                form{
+                    margin: 0 300px;
+                }
                 input{
                     background-color: #3A3B3C;
                     border: none;
                     border-radius: 5px;
                     padding: 7px;
                     margin: 20px 100px;
-                    width: 600px;
+                    width: 790px;
                     height: 30px;
                     color: white;
                     font-size: 1rem;

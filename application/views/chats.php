@@ -9,14 +9,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
-            alert('document is ready');
             $('form').submit(function(){
-                
+                $.post($(this).attr('action'), $(this).serialize(), function(res) {
+                    console.log(res);
+                    var string = ``;
+                    string +=   `<p class="user"><span class="user-span">${res.atext}
+                                <p class="chatbot">
+                                    <img class="chatbot-img" src="/assets/img/ron.jpg" alt="chatbot image">
+                                    <span class="chatbot-span">${res.atext}</span> 
+                                </p>`
 
-                var input = $('user_input');
-                $.post($(this).attr('action'), $(this).serialize(), function(res){
-                    console.log($(this).attr('action'));
-                }, 'json');
+                    $('#chats').html(string);
+                }, "json");
+                return false;
             });
         });
     </script>
@@ -32,29 +37,12 @@
                 <span>Active daw</span>
             </div>
         </div>
-        <div class="chat-body">
-            <p class="user"><span class="user-span">Hi</span> </p>
-            <p class="chatbot">
-                <img class="chatbot-img" src="/assets/img/ron.jpg" alt="chatbot image">
-                <span class="chatbot-span">
-                     Hello
-                </span> 
-            </p>
-        </div>
-        <div class="chat-footer">
-            <form action="/chats/message" method="POST">
-                <input type="text" name="message" placeholder="Aa">
-            </form>
-        </div>
-        <?php
-// header("Content-type:application/pdf");
-
-// It will be called downloaded.pdf
-// header("Content-Disposition:attachment;filename='downloaded.pdf'");
-
-// The PDF source is in original.pdf
-// readfile("original.pdf");
-?>
+        <div id="chats"></div>
+    </div>
+    <div class="chat-footer">
+        <form action="/chats/message" method="POST">
+            <input type="text" name="message" placeholder="Type something here">
+        </form>
     </div>
 </body>
 </html>
